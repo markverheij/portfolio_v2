@@ -1,0 +1,119 @@
+.soundboard-page {
+
+  .draggable-group-holder {
+
+    .playlist {
+      @include row();
+      @include span-columns(12);
+      height: 150px;
+      //width: 100%;
+      background-color: #333;
+
+      .dragged {
+        position: absolute;
+        opacity: 0.5;
+        z-index: 2000;
+      }
+
+      .playlist__items {
+        display: flex;
+        align-items: stretch;
+        padding-left: 0;
+        margin-top: 0;
+        height: 150px;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* Internet Explorer/Edge */
+        user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+        .sound__items__item,
+        .placeholder,
+        .playlist__items__item {
+          width: 100%;
+          background-color: #01c7c7;
+          text-align: center;
+          //margin: 0px 4px;
+          list-style-type: none;
+          outline:1px solid white;
+        }
+        .placeholder {
+          background-color: rgba(1, 199, 199, 0.48);
+          position: relative;
+          &::before {
+//            position: absolute;
+//            content: '';
+//            width: 2px;
+//            height: 100%;
+//            background-color: white;
+//            list-style-type: none;
+//            right: -5px;
+          }
+        }
+        @include transition(all 0.6s);
+      }
+    }
+    .sound {
+      @include row();
+      @include span-columns(12);
+      min-height: 200px;
+      background-color: #f8f8f8;
+      margin-top: 60px;
+      .dragged {
+        position: absolute;
+        opacity: 0.5;
+        z-index: 2000;
+      }
+      &__items {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        flex-wrap:wrap;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none;   /* Chrome/Safari/Opera */
+        -khtml-user-select: none;    /* Konqueror */
+        -moz-user-select: none;      /* Firefox */
+        -ms-user-select: none;       /* Internet Explorer/Edge */
+        user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
+        padding-left: 0;
+        margin-top: 0;
+        min-height:150px;
+        width:100%;
+
+        .playlist__items__item,
+        .placeholder,
+        &__item {
+          background-color: #ff6970;
+          width:100%;
+          max-width: 380px;
+          height: 150px;
+          margin-bottom:15px;
+          text-align: center;
+          //line-height: 150px;
+          color: white;
+          //margin:0px 5px;
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          &__length,
+          &__name {
+            width:100%;
+
+          }
+        }
+        .placeholder{
+          opacity:0.5;
+          position: relative;
+        }
+      }
+
+    }
+  }
+
+
+
+}

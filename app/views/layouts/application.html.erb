@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PortfolioRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<aside class="sidemenu">
+  <nav class="mainmenu">
+    <a class="mainmenu__item"  href="/">HOME</a>
+    <a class="mainmenu__item"  data-type="page-transition" href="/cv">CV</a>
+    <a class="mainmenu__item"  data-type="page-transition" href="/soundboard">SOUNDBOARD</a>
+    <a class="mainmenu__item"  data-type="page-transition" href="/123broodje">PROJECTS</a>
+    <a class="mainmenu__item"  href="/coontact">CONTACT</a>
+  </nav>
+</aside>
+
+
+<div id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="content-holder">
+
+    <%= yield %>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#hamburger').click(function(){
+            $(this).toggleClass('open');
+            $('.sidemenu').toggleClass('open');
+            $('.content-holder').toggleClass('content-holder--menu-active');
+        });
+    });
+</script>
+</body>
+</html>
